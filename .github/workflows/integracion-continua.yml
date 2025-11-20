@@ -32,3 +32,10 @@ jobs:
       # Paso D: Correr los tests
       - name: Correr tests
         run: npm test
+
+  deploy-simulado:
+    needs: build-and-test # <--- LA CLAVE: Espera a que el anterior termine bien
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simular despliegue
+        run: echo "🚀 Desplegando a producción... ¡Todo listo!"
